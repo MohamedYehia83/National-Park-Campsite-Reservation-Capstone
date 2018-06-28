@@ -1,14 +1,14 @@
 package com.techelevator;
 
-public class Site {
+public class Campsite {
 
 	private Long site_id;
 	private Long campground_id;
 	private int site_number;
 	private int max_occupancy;
-	private boolean accessible = false;
+	private boolean isAccessible = false;
 	private int max_rv_length;
-	private boolean utilities = false;
+	private boolean hasUtilities = false;
 	
 	
 	
@@ -37,10 +37,10 @@ public class Site {
 		this.max_occupancy = max_occupancy;
 	}
 	public boolean isAccessible() {
-		return accessible;
+		return isAccessible;
 	}
-	public void setAccessible(boolean accessible) {
-		this.accessible = accessible;
+	public void setAccessible(boolean isAccessible) {
+		this.isAccessible = isAccessible;
 	}
 	public int getMax_rv_length() {
 		return max_rv_length;
@@ -48,11 +48,11 @@ public class Site {
 	public void setMax_rv_length(int max_rv_length) {
 		this.max_rv_length = max_rv_length;
 	}
-	public boolean isUtilities() {
-		return utilities;
+	public boolean hasUtilities() {
+		return hasUtilities;
 	}
-	public void setUtilities(boolean utilities) {
-		this.utilities = utilities;
+	public void setHasUtilities(boolean hasUtilities) {
+		this.hasUtilities = hasUtilities;
 	}
 	
 	

@@ -1,6 +1,5 @@
 package com.techelevator;
 
-import java.time.LocalDate;
 
 
 public class Park {
@@ -8,7 +7,7 @@ public class Park {
 	private Long park_id;
 	private String name;
 	private String location;
-	private LocalDate establish_date;
+	private String establish_date;
 	private int area;
 	private int visitors;
 	private String description;
@@ -33,10 +32,10 @@ public class Park {
 	public void setLocation(String location) {
 		this.location = location;
 	}
-	public LocalDate getEstablish_date() {
+	public String getEstablish_date() {
 		return establish_date;
 	}
-	public void setEstablish_date(LocalDate establish_date) {
+	public void setEstablish_date(String establish_date) {
 		this.establish_date = establish_date;
 	}
 	public int getArea() {

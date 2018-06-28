@@ -1,15 +1,16 @@
 package com.techelevator;
 
-import java.math.BigDecimal;
-import java.time.LocalDate;
-import java.util.List;
+import java.util.Map;
 
 public interface CampgroundDAO {
 
-	public List <Campground> getCampgroundById(Long id);
-	public List <Campground> searchCampgroundByName(String nameSearch);
-	public List <Campground> searchCampgroundByOpenMonth(LocalDate date);
-	public List <Campground> searchCampgroundByClosingMonth(LocalDate date);
-	public List <Campground> searchCampgroundByDailyFee(BigDecimal dailyFee);
+	 public Map<String, Campground> mapsCampgroundNameToCampground();
+
+	    public void displayParkCampgrounds(String name);
+
+	    public boolean inquireReservation(String parkName);
+
+	    public boolean isOpen(Campground campground, String arrivalDate, String departDate);
+
 	
 	}

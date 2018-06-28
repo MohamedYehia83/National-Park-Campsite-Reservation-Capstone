@@ -1,14 +1,11 @@
 package com.techelevator;
 
-import java.util.List;
+
+import java.util.Map;
 
 
 public interface ParkDAO {
 
-	public List<Park> getAllAvailableParks();
-	public List<Park> searchParksByName(String nameSearch);
-	public List<Park> searchParkByLocation(String locationSearch); 
-	public Park getParkById(Long id);
-	public Park createPark(Park updatedPark);
-	public void savePark(Park updatedPark);	
+	public Map<String, Park> getParks();
+	public void displayParkInfo(String choice);
 }

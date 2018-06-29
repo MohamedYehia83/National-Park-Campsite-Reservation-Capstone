@@ -1,16 +1,10 @@
 package com.techelevator;
 
-import java.util.Map;
+import java.util.List;
+
 
 public interface CampgroundDAO {
-
-	 public Map<String, Campground> mapsCampgroundNameToCampground();
-
-	    public void displayParkCampgrounds(String name);
-
-	    public boolean inquireReservation(String parkName);
-
-	    public boolean isOpen(Campground campground, String arrivalDate, String departDate);
-
 	
-	}
+	public List<Campground> getAllCampgrounds(Park park); 
+	
+}

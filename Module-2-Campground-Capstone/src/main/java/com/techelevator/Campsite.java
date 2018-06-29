@@ -4,13 +4,11 @@ public class Campsite {
 
 	private Long site_id;
 	private Long campground_id;
-	private int site_number;
+	private String site_number;
 	private int max_occupancy;
 	private boolean isAccessible = false;
 	private int max_rv_length;
 	private boolean hasUtilities = false;
-	
-	
 	
 	public Long getSite_id() {
 		return site_id;
@@ -24,10 +22,10 @@ public class Campsite {
 	public void setCampground_id(Long campground_id) {
 		this.campground_id = campground_id;
 	}
-	public int getSite_number() {
+	public String getSite_number() {
 		return site_number;
 	}
-	public void setSite_number(int site_number) {
+	public void setSite_number(String site_number) {
 		this.site_number = site_number;
 	}
 	public int getMax_occupancy() {
@@ -48,15 +46,14 @@ public class Campsite {
 	public void setMax_rv_length(int max_rv_length) {
 		this.max_rv_length = max_rv_length;
 	}
-	public boolean hasUtilities() {
+	public boolean isHasUtilities() {
 		return hasUtilities;
 	}
 	public void setHasUtilities(boolean hasUtilities) {
 		this.hasUtilities = hasUtilities;
 	}
 	
-	
-	
-	
-	
+	public String toString() {
+		return site_number +"\t" + max_occupancy + "\t" + isAccessible + "\t" + max_rv_length + "\t" + hasUtilities;
+	}
 }

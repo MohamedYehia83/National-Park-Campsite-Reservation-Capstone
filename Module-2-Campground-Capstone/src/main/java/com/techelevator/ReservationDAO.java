@@ -1,9 +1,10 @@
 package com.techelevator;
 
-import java.util.Date;
+
 
 public interface ReservationDAO {
 	
-	public boolean setReservation(Campground campground, Date arrivalDate, Date departDate);
-	
+
+	public int setReservation(Reservation res);
+	public int findReservation(Reservation res);
 }

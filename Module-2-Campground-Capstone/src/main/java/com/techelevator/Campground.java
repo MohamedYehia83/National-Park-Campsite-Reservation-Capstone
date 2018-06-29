@@ -2,58 +2,75 @@ package com.techelevator;
 
 
 
-	public class Campground {
-		
-	private Long campground_id;
+import java.text.DateFormatSymbols;
+
+
+
+public class Campground {
+
+	private Long id;
 	private Long park_id;
 	private String name;
-	private String open_from_mm;
-	private String open_to_mm;
+	private int open_from_mm;
+	private int open_to_mm;
 	private double daily_fee;
-	
-	
-	public Long getCampground_id() {
-		return campground_id;
+
+	public Long getId() {
+		return id;
 	}
-	public void setCampground_id(Long campground_id) {
-		this.campground_id = campground_id;
+
+	public void setId(Long id) {
+		this.id = id;
 	}
-	public Long getPark_id() {
-		return park_id;
-	}
-	public void setPark_id(Long park_id) {
-		this.park_id = park_id;
-	}
+
 	public String getName() {
 		return name;
 	}
+
 	public void setName(String name) {
 		this.name = name;
 	}
-	public String getOpen_from_mm() {
+
+	public int getOpen_from_mm() {
 		return open_from_mm;
 	}
-	public void setOpen_from_mm(String open_from_mm) {
-		this.open_from_mm = open_from_mm;
+	
+	public String getOpeningMonth() {
+		return new DateFormatSymbols().getMonths()[getOpen_from_mm()-1];
 	}
-	public String getOpen_to_mm() {
+
+	public void setOpen_from_mm(int openingTime) {
+		this.open_from_mm = openingTime;
+	}
+
+	public int getOpen_to_mm() {
 		return open_to_mm;
 	}
-	public void setOpen_to_mm(String open_to_mm) {
+	
+	public String getClosingMonth() {
+		return new DateFormatSymbols().getMonths()[getOpen_to_mm()-1];
+	}
+
+	public void setOpen_to_mm(int open_to_mm) {
 		this.open_to_mm = open_to_mm;
 	}
-	public double getDaily_fee() {
+
+	public double getDaily_Fee() {
 		return daily_fee;
 	}
-	public void setDaily_fee(double daily_fee) {
-		this.daily_fee = daily_fee;
+
+	public void setDaily_Fee(double daily_Fee) {
+		this.daily_fee = daily_Fee;
 	}
-	
-	
-	
 
+	public Long getPark_id() {
+		return park_id;
+	}
 
-	
-	
-	
+	public void setPark_id(Long park_id) {
+		this.park_id = park_id;
+	}
+	public String toString() {
+		return name;
+	}
 }

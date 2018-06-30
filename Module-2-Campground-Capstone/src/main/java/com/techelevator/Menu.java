@@ -5,15 +5,20 @@ import java.io.OutputStream;
 import java.io.PrintWriter;
 import java.util.Scanner;
 
-
 public class Menu {
 
-	private PrintWriter out;
+    private PrintWriter out;
     private Scanner in;
 
     public Menu(InputStream input, OutputStream output) {
         this.out = new PrintWriter(output);
         this.in = new Scanner(input);
+    }
+    
+    public String getSimpleInput(String prompt) {
+        System.out.println(prompt + ">>>");
+        String userInput = in.nextLine();
+        return userInput;
     }
 
     public Object getChoiceFromOptions(Object[] options) {
@@ -28,14 +33,10 @@ public class Menu {
     private Object getChoiceFromUserInput(Object[] options) {
         Object choice = null;
         String userInput = in.nextLine();
-        try {           
-            if(userInput.equals("Q")) {
-                choice = options[options.length - 1];
-            } else {
-                int selectedOption = Integer.valueOf(userInput);
-                if(selectedOption > 0 && selectedOption <= options.length) {
-                    choice = options[selectedOption - 1];
-                }
+        try {
+            int selectedOption = Integer.valueOf(userInput);
+            if(selectedOption <= options.length) {
+                choice = options[selectedOption - 1];
             }
         } catch(NumberFormatException e) {
             // eat the exception, an error message will be displayed below since choice will be null
@@ -50,7 +51,7 @@ public class Menu {
         out.println();
         for(int i = 0; i < options.length; i++) {
             int optionNum = i+1;
-            out.println(optionNum+") "+options[i]);
+            out.println(optionNum+") "+ options[i]);
         }
         out.print("\nPlease choose an option >>> ");
         out.flush();
